@@ -1,0 +1,20 @@
+[package]
+name = "testpalace"
+version = "0.1.0"
+edition = "2021"
+rust-version.workspace = true
+
+[package.metadata.release]
+release = false
+
+[dependencies]
+tokio = { workspace = true, features = ["full"] }
+async-trait = "0.1"
+futures = { workspace = true }
+libp2p = { path = "../../libp2p", features = [ "tokio", "gossipsub", "noise", "macros", "tcp", "yamux", "quic","kad","dns", "identify","rsa"] }
+tracing-subscriber = { workspace = true, features = ["env-filter"] }
+anyhow = "1.0.86"
+
+[lints]
+workspace = true
+
